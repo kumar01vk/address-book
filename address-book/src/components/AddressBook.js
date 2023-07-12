@@ -133,6 +133,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import './AddressBook.css';
 
 
 const AddressBook = () => {
@@ -217,7 +218,7 @@ const AddressBook = () => {
     : contacts;
 
   return (
-    <div>
+    <div className='container row'>
       <h1>Address Book</h1>
       <form onSubmit={handleAddContact}>
         <input
@@ -250,7 +251,7 @@ const AddressBook = () => {
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
-        <button type="submit">Add</button>
+        <button type="submit">Proceed</button>
       </form>
       <input
         type="text"
