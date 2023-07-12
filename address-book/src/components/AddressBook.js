@@ -125,17 +125,45 @@ const AddressBook = () => {
         value={filter}
         onChange={handleFilterChange}
       />
-      <ul>
-        {filteredContacts.map((contact) => (
-          <li key={contact.id}>
-            {contact.name} - {contact.contact_number} - {contact.address} -{' '}
-            {contact.gender} - {contact.age}
-            <button onClick={() => handleDeleteContact(contact.id)}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+       {/* <ul>
+         {filteredContacts.map((contact) => (
+      //     <li key={contact.id}>
+      //       {contact.name} - {contact.contact_number} - {contact.address} -{' '}
+      //       {contact.gender} - {contact.age}
+      //       <button onClick={() => handleDeleteContact(contact.id)}>
+      //         Delete
+      //       </button>
+      //     </li>
+      //   ))}
+      // </ul> */}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Age</th>
+            {/* <th>Action</th> */}
+          </tr>
+        </thead>
+        <tbody>
+          {filteredContacts.map((contact) => (
+            <tr key={contact.id}>
+              <td>{contact.name}</td>
+              <td>{contact.contact_number}</td>
+              <td>{contact.address}</td>
+              <td>{contact.gender}</td>
+              <td>{contact.age}</td>
+              <td>
+                <button onClick={() => handleDeleteContact(contact.id)}>
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
